@@ -1,0 +1,343 @@
+/*公共样式 begin*/
+html,body{
+    height: 100%;
+    width: 100%;
+}
+body{
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #edf2f6;
+}
+.content .top_nav .nav_title{
+    width: 100vw;
+    height: 13.75vw;
+    font-size: 5vw;
+    background-color: #fff;
+    color: #357aed;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.content .top_nav .flow{
+    width: 100vw;
+    height: 9.375vw;
+    color: #a6b5c1;
+    border-top: 1px solid #eee;
+    background-color: #fff;
+    font-size: 3.75vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.asterisk{
+    display: block;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+    color: #357aed;
+    line-height: 40px;
+    position: absolute;
+    top: 3px;
+    right: -24px;
+}
+
+.datetimepicker {
+    top:200px!important;
+}
+.opacity0{
+    opacity: 0;
+}
+.opacity1{
+    opacity: 1;
+}
+.black{
+    color: #000;
+    font-weight: 800;
+}
+.displayN{display: none;}
+.displayB{display: inline-block;}
+.black{color: black;}
+/*公共样式 end*/
+body{
+    background-color: #edf2f6;
+    font-size: 14px;
+}
+
+
+/*拍照界面样式 begin*/
+.picture{
+    width: 40px;
+    height: 40px;
+    margin-left: 300px;
+    margin-top: 14px;
+    background: url(../imgs/photography-icon.png) no-repeat center center;
+}
+#re-photographed{
+    width: 80px;
+    height: 32px;
+    font-size: 13px;
+}
+/*拍照界面样式 end*/
+
+/*引导页面样式 begin*/
+.photo_choice{
+    box-sizing: border-box;
+    width: 100vw;
+    height: 50.625vw;
+    padding-bottom: 4vw;
+}
+.photo_choice .photo_title{
+    width: 100vw;
+    height:12.2vw;
+    font-size: 3.75vw;
+    color: #576780;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+span.left-icon{
+    margin-right: 2.5vw;
+    display: block;
+    width: 3.125vw;
+    height: 1.09375vw;
+    background: url(../imgs/标题装饰图形-左.png) no-repeat center center;
+    background-size: 3.125vw 1.09375vw;
+}
+span.right-icon{
+    margin-left: 2.5vw;
+    display: block;
+    width: 3.125vw;
+    height: 1.09375vw;
+    background: url(../imgs/标题装饰图形-右.png) no-repeat center center;
+    background-size: 3.125vw 1.09375vw;
+}
+.photo_choice .photo_content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.photo_content .content-left,.content-right{
+    box-sizing: border-box;
+    width: 41.8vw;
+    height: 34.375vw;
+    font-size: 4.375vw;
+    background-color: #fff;
+    border-radius: 1vw;
+    display: flex;
+    padding-bottom: 2vw;
+    justify-content: center;
+    align-items: flex-end;
+}
+.photo_content .content-left{
+    margin-left: 6.25vw;
+    background: url(../imgs/我不带眼镜.png) no-repeat center center;
+    background-size: 41.8vw 34.375vw;
+}
+.photo_content .content-right{
+    margin-right: 6.25vw;
+    background: url(../imgs/我带眼镜.png) no-repeat center center;
+    background-size: 41.8vw 34.375vw;
+}
+.photo_require{
+    width: 100vw;
+    padding-bottom: 8.5vw;
+    padding-top: 6.25vw;
+    background-color: #fff;
+}
+.photo_require .require_title{
+    margin-bottom: 2.625vw;
+    font-size: 4vw;
+    color: #576780;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.photo_require p{
+    font-size: 3.75vw;
+    margin-left: 5vw;
+}
+p.right{
+    margin: 0;
+    margin-top: 2.7vw;
+    padding-left: 8vw;
+    background: url(../imgs/正确icon.png) no-repeat left center;
+    background-size: 4.7vw 4.7vw;
+}
+p.wrong{
+    margin: 0;
+    margin-top: 2.7vw;
+    padding-left: 8vw;
+    background: url(../imgs/错误icon.png) no-repeat left center;
+    background-size: 4.7vw 4.7vw;
+}
+.photo_require .require_content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.photo_require .require_content .img-box{
+    width: 34.375vw;
+    height: 42.5vw;
+    margin-top: 5vw;
+}
+.photo_require .require_content .img-box:nth-child(1){
+    margin-left: 10.8vw;
+}
+.photo_require .require_content .img-box:nth-child(3){
+    margin-left: 10.8vw;
+}
+.photo_require .require_content .img-box:nth-child(2){
+    margin-right: 10.8vw;
+}
+.photo_require .require_content .img-box:nth-child(4){
+    margin-right: 10.8vw;
+}
+.require_content .img-box img{
+    display: block;
+    width: 34.375vw;
+    height: 34.375vw;
+    border: 1px solid #eee;
+}
+
+/*引导页面样式 end*/
+
+/*继续拍照页面样式 begin*/
+#continuePhoto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#continuePhoto .img-box{
+    margin-top: 6.09375vw;
+    width: 80.7vw;
+    height: 80.7vw;
+}
+#continuePhoto .img-box img{
+    width: 100%;
+    height: 100%;
+}
+#continuePhoto p{
+    font-size: 3.75vw;
+}
+#continuePhoto button{
+    margin-top: 13vw;
+    height: 12.5vw;
+    width: 90.625vw;
+    background-color: #357aed;
+    border-radius: 6.25vw;
+    font-size: 4vw;
+    color: #fff;
+}
+/*继续拍照页面样式 begin*/
+
+/*完成拍照页面样式 begin*/
+#finishPhoto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#finishPhoto .img-box{
+    margin-top: 6.09375vw;
+    width: 80.7vw;
+    height: 80.7vw;
+}
+#finishPhoto .img-box img{
+    width: 100%;
+    height: 100%;
+}
+#finishPhoto p{
+    font-size: 3.75vw;
+}
+#finishPhoto button{
+    margin-top: 13vw;
+    height: 12.5vw;
+    width: 90.625vw;
+    background-color: #357aed;
+    border-radius: 6.25vw;
+    font-size: 4vw;
+    color: #fff;
+}
+/*完成拍照页面样式 begin*/
+
+/*选择身份页面样式 begin*/
+.getPhone{
+    box-sizing: border-box;
+    width: 100vw;
+    height: 41vw;
+    padding-bottom: 5vw;
+    padding-top: 1.7vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.getPhone .img-box{
+    width: 31.25vw;
+    height: 31.25vw;
+}
+.getPhone .img-box img{
+    display: block;
+    width: 31.25vw;
+    height: 31.25vw;
+}
+.choiceStatus{
+    width: 100vw;
+    height: 107.1875vw;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding-bottom: 25.3125vw;
+    padding-top: 6.71875vw;
+}
+.choiceStatus_title{
+    width: 100vw;
+    height:12.2vw;
+    font-size: 3.75vw;
+    color: #576780;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.choiceStatus .info{
+    font-size: 3.75vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4.6vw;
+}
+.choiceStatus_content .img-box{
+    width: 90vw;
+    height: 28.125vw;
+    border-radius: 1vw;
+}
+.choiceStatus_content .img-box:nth-child(1){
+    margin-bottom: 3.125vw;
+}
+.choiceStatus_content .img-box p{
+    font-size: 4.6874vw;
+    color: #fff;
+    margin-bottom: 11.25vw;
+}
+.choiceStatus_content .img-box span{
+    font-size: 5.9375vw;
+    color: #fff;
+}
+.emp{
+    margin-left: 15.3125vw;
+}
+.vis{
+    margin-left: 52.35vw;
+}
+.choiceStatus_content .img-box:nth-child(1){
+    background: url(../imgs/我是员工.png) no-repeat center center;
+    background-size: 90vw 28.125vw;
+}
+.choiceStatus_content .img-box:nth-child(2){
+    background: url(../imgs/我是访客.png) no-repeat center center;
+    background-size: 90vw 28.125vw;
+}
+/*选择身份页面样式 end*/
