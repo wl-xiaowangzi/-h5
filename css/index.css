@@ -31,18 +31,6 @@ body{
     justify-content: space-around;
     align-items: center;
 }
-.asterisk{
-    display: block;
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
-    text-align: center;
-    color: #357aed;
-    line-height: 40px;
-    position: absolute;
-    top: 3px;
-    right: -24px;
-}
 
 .datetimepicker {
     top:200px!important;
@@ -270,6 +258,8 @@ p.wrong{
     box-sizing: border-box;
     width: 100vw;
     height: 41vw;
+    padding-left:15vw;
+    padding-right:15vw;
     padding-bottom: 5vw;
     padding-top: 1.7vw;
     display: flex;
@@ -291,7 +281,6 @@ p.wrong{
     background-color: #fff;
     box-sizing: border-box;
     padding-bottom: 25.3125vw;
-    padding-top: 6.71875vw;
 }
 .choiceStatus_title{
     width: 100vw;
@@ -312,6 +301,9 @@ p.wrong{
 .choiceStatus_content .img-box{
     width: 90vw;
     height: 28.125vw;
+    display: flex;
+    align-items: flex-end;
+    margin-left: 5vw;
     border-radius: 1vw;
 }
 .choiceStatus_content .img-box:nth-child(1){
@@ -325,6 +317,7 @@ p.wrong{
 .choiceStatus_content .img-box span{
     font-size: 5.9375vw;
     color: #fff;
+    margin-left: 2.5vw;
 }
 .emp{
     margin-left: 15.3125vw;
@@ -341,3 +334,113 @@ p.wrong{
     background-size: 90vw 28.125vw;
 }
 /*选择身份页面样式 end*/
+/*表单提交 begin*/
+.visitor_title{
+    width: 100vw;
+    height:12.2vw;
+    font-size: 3.75vw;
+    color: #576780;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#modalVisitantAdd button{
+    margin-top: 6.875vw;
+    margin-bottom: 9.6875vw;
+    height: 12.5vw;
+    margin-left: 5vw;
+    width: 90vw;
+    background-color: #357aed;
+    border-radius: 6.25vw;
+    font-size: 4vw;
+    color: #fff;
+}
+#modalPeopleAdd button{
+    margin-top: 6.875vw;
+    margin-bottom: 9.6875vw;
+    height: 12.5vw;
+    margin-left: 5vw;
+    width: 90vw;
+    background-color: #357aed;
+    border-radius: 6.25vw;
+    font-size: 4vw;
+    color: #fff;
+}
+.h5From{
+    width: 100%;
+    height: 14vw;
+    color: #576780;
+    font-size: 4vw;
+    line-height: 14vw;
+    padding: 0;
+    border: 0;
+}
+.form-gr{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    width: 100vw;
+    border: 1px solid #eee;
+}
+.ctrol-label{
+    white-space:nowrap;
+    font-size: 4vw;
+    line-height: 14vw;
+    height: 14vw;
+    padding-left:4.6875vw;
+    padding-right: 4.6875vw;
+    background-color: #fff;
+    margin: 0;
+    color: #576780;
+}
+.ctrol-right{
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.asterisk{
+    display: block;
+    width: 5vw;
+    height: 14vw;
+    font-size: 3vw;
+    color: #357aed;
+    line-height: 14vw;
+    background-color: #fff;
+}
+.verification{
+    height: 14vw;
+    width: 28.125vw;
+    background-color: #357aed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 3.75vw;
+}
+
+/*表单提交 end*/
+
+/*成功提交 begin*/
+.successfully{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 37.5vw;
+}
+.successfully .img-box{
+    width: 15.625vw;
+    height: 15.625vw;
+    margin-bottom: 3.6vw;
+}
+.successfully .success{
+    font-size: 4.6875vw;
+    color: #357aed;
+}
+.successfully p{
+    margin-bottom: 2.5vw;
+    color: #576780;
+    font-size: 3.75vw;
+}
+/*成功提交 end*/

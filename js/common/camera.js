@@ -6,17 +6,6 @@
 define(["jquery", "artTemplate", "text!tpls/camera.html", "common/api","people/continuePhoto", "localImg","mobileBUGFix","viewport","exif"], function ($, art, cameraTpl, API,continuePhoto, localResizeIMG,viewport) {
     return function () {
         var $camera = $(cameraTpl);
-        
-
-        // $camera
-        //     .on("click", ".picture", function () {
-        //         context.drawImage(video, 0, 0, 640, 480);
-        //         //从画布上获取照片数据  
-        //         var imgData = canvas.toDataURL("image/png");
-        //         //将图片转换为Base64  
-        //         var base64Data = imgData.substr(22);
-                
-        //     })
 
         $(".module-container").append($camera);
        
@@ -38,7 +27,7 @@ define(["jquery", "artTemplate", "text!tpls/camera.html", "common/api","people/c
                 // 将图片上传到服务器
                 API.uploadImage(base64Data, function (res) {
                     if (res.code != 0) {
-                        alert(1)
+                        console.log(res)
                         return
                     }
                     $("#btnPeopleManager").attr("faceimage", res.data.faceimage);

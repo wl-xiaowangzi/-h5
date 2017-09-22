@@ -7,12 +7,14 @@ define(["jquery", "artTemplate", "common/api", "text!tpls/continuePhoto.html","c
         $(".module-container").empty();
         //编译模板
         var $continuePhoto=$(continuePhotoTpl);
-        
+        var faceimage1=faceimage1;
+        var facedata1=facedata1;
+        console.log(faceimage1);
         //指引界面点击事件
         $continuePhoto
             .on("click", ".secPhoto", function () {
                 //加载照相模块
-                secCamera();
+                secCamera(faceimage1,facedata1);
             })
             
         //把渲染好的元素放到页面中

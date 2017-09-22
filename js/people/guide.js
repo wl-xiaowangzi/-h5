@@ -2,7 +2,7 @@
  * 自助申请指引界面
  * Created by landon 2017/9/22.
  */
-define(["jquery", "artTemplate", "common/api", "text!tpls/peopleGuide.html","common/camera"], function ($, art, API, peopleGuideTpl,camera) {
+define(["jquery", "artTemplate", "common/api", "text!tpls/peopleGuide.html","common/camera","common/secCamera"], function ($, art, API, peopleGuideTpl,camera,secCamera) {
     return function () {
         //编译模板
         var $peopleGuide=$(peopleGuideTpl);
@@ -11,7 +11,7 @@ define(["jquery", "artTemplate", "common/api", "text!tpls/peopleGuide.html","com
         $peopleGuide
             .on("click", ".noGlasses", function () {
                 //加载照相模块
-                camera();
+                secCamera();
             })
             .on("click", ".withGlasses", function () {
                 //加载两次照相模块

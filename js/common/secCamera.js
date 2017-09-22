@@ -4,7 +4,7 @@
  *   Date:2017/9/5
  */
 define(["jquery", "artTemplate", "text!tpls/camera.html", "common/api","people/finishPhoto", "localImg","mobileBUGFix","viewport","exif"], function ($, art, cameraTpl, API,finishPhoto, localResizeIMG,viewport) {
-    return function () {
+    return function (faceimage1,facedata1) {
         var $camera = $(cameraTpl);
         
         $(".module-container").append($camera);

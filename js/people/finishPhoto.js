@@ -7,7 +7,7 @@ define(["jquery", "artTemplate", "common/api", "text!tpls/finishPhoto.html","peo
         $(".module-container").empty();
         //编译模板
         var $finishPhoto=$(finishPhotoTpl);
-        
+        console.log(faceimage2,facedata2);
         //指引界面点击事件
         $finishPhoto
             .on("click", ".choiceForm", function () {
