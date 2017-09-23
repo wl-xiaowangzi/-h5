@@ -5,9 +5,9 @@
  */
 define(["jquery", "artTemplate", "text!tpls/successfully.html"], function ($, art, successfullyTpl) {
     return function () {
+        $(".module-container").empty();
         var $successfully = $(successfullyTpl);
         $(".module-container").append($successfully);
         $(".step4").addClass('black');
-        $(".step3").removeClass('black');
     };
 });

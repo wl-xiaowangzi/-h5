@@ -9,7 +9,6 @@ define(["jquery", "artTemplate", "common/api", "text!tpls/continuePhoto.html","c
         var $continuePhoto=$(continuePhotoTpl);
         var faceimage1=faceimage1;
         var facedata1=facedata1;
-        console.log(faceimage1);
         //指引界面点击事件
         $continuePhoto
             .on("click", ".secPhoto", function () {

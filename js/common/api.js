@@ -27,7 +27,7 @@ define(["jquery"],function($){
             $.ajax({
                 url:api+"/api/employee/add",
                 type:"post",
-                data:{verifcode:verifcode,organizationid:organizationid,deviceids:deviceids,dename:name,sex:sex,brithtime:brithday,phonenumber:phonenumber,employeenumber:employeenumber,job:job,faceimages:faceimages,facedatas:facedatas},
+                data:{verifcode:verifcode,organizationid:organizationid,deviceids:deviceids,name:name,sex:sex,brithtime:brithday,phonenumber:phonenumber,employeenumber:employeenumber,job:job,faceimages:faceimages,facedatas:facedatas},
                 success:function(res){
                     if(res.code!=0){
                     console.log(res.message);

@@ -13,10 +13,23 @@ define(["jquery", "artTemplate", "text!tpls/peopleAdd.html", "common/api","peopl
             
             $peopleAdd.on("click",".verification",function(){
                 var phonenumber = $(".phonenumber").val();
-                API.getVerifcode(phonenumber,function(res){
-                    alert(res);
-                })
+                // API.getVerifcode(phonenumber,function(res){
+                    // 收到短信
+                    var time = 60;
+                    var timename =setInterval(function(){
+                        if(time>0){
+                            time--
+                            $(".verification").addClass("forbidden").html(time+"S后可重发");
+                        }else{
+                            clearInterval(timename);
+                            $(".verification").removeClass("forbidden").html("获取验证码");
+                        }
+                        
+                    },1000)
+                   
+                // })
             })
+            
             $peopleAdd.on("click", ".btn-blue", function () {
                     var secondFaceimages = $("#btnPeopleManager").attr("faceimage");
                     var secondFacedatas = $("#btnPeopleManager").attr("facedata");
@@ -36,9 +49,13 @@ define(["jquery", "artTemplate", "text!tpls/peopleAdd.html", "common/api","peopl
                     var sex = $(".sex").val();
                     var phonenumber = $(".phonenumber").val();
                     var verifcode = $(".verifcode").val();
-                    var organizationid = "001001";
+                    var organizationid = $(".organizationid").val();
+                    $peopleAdd.on("click",".organizationid",function(){
+                        API.queryDevice(organizationid,function(res){
+                            console.log(res)
+                        })
+                    })
                     var deviceids = "SB001";
-                    console.log(verifcode,organizationid, deviceids,name, sex, birthday, phonenumber, employeenumber, job, faceimages, facedatas)
                     API.addEmployee(verifcode,organizationid, deviceids,name, sex, birthday, phonenumber, employeenumber, job, faceimages, facedatas, function (res) {
                         //成功申请，跳转到成功页面
                         successfully()
@@ -48,7 +65,6 @@ define(["jquery", "artTemplate", "text!tpls/peopleAdd.html", "common/api","peopl
         
         $(".module-container").append($peopleAdd);
         $(".step3").addClass('black');
-        $(".step2").removeClass('black');
         //渲染入职日期-->日期控件
         $peopleAdd.find(".birthday-join").datetimepicker({
             format: 'yyyy-mm-dd',

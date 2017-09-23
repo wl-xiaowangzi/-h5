@@ -47,7 +47,6 @@ define(["jquery", "artTemplate", "text!tpls/peopleVisitantAdd.html", "common/api
 
         $(".module-container").append($peopleVisitantAdd);
         $(".step3").addClass('black');
-        $(".step2").removeClass('black');
         //渲染入职日期-->日期控件
         $peopleVisitantAdd.find(".date-join").datetimepicker({
             weekStart: 1, //一周从哪一天开始。0（星期日）到6（星期六）

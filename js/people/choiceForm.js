@@ -10,7 +10,6 @@ define(["jquery", "artTemplate", "common/api", "text!tpls/choiceForm.html","peop
         var faceimages2=faceimages2;
         var facedatas2=facedatas2;
         var faceimages1=$("#btnPeopleManager").attr("faceimage");
-        console.log(faceimages2,facedatas2)
         //选择身份界面点击事件
         $choiceForm
             .on("click", ".employee", function () {
@@ -25,7 +24,6 @@ define(["jquery", "artTemplate", "common/api", "text!tpls/choiceForm.html","peop
         //把渲染好的元素放到页面中
         $(".module-container").append($choiceForm);
         $(".step2").addClass('black');
-        $(".step1").removeClass('black');
         $(".pic1").attr("src",faceimages1);
         $(".pic2").attr("src",faceimages2);
     }
