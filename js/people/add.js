@@ -13,23 +13,31 @@ define(["jquery", "artTemplate", "text!tpls/peopleAdd.html", "common/api","peopl
             
             $peopleAdd.on("click",".verification",function(){
                 var phonenumber = $(".phonenumber").val();
-                // API.getVerifcode(phonenumber,function(res){
+                $(".organizationid").trigger("click");
+                API.getVerifcode(phonenumber,function(res){
                     // 收到短信
                     var time = 60;
                     var timename =setInterval(function(){
-                        if(time>0){
+                        if(time>1){
                             time--
-                            $(".verification").addClass("forbidden").html(time+"S后可重发");
+                            $(".verification").addClass("forbidden").attr({"disabled":"disabled"}).html(time+"S后可重发");
                         }else{
                             clearInterval(timename);
-                            $(".verification").removeClass("forbidden").html("获取验证码");
+                            $(".verification").removeClass("forbidden").removeAttr("disabled").html("获取验证码");
                         }
                         
                     },1000)
                    
-                // })
+                })
+                return false;
             })
-            
+            $peopleAdd.on("click",".organizationid",function(){
+                        var organizationid = $(".organizationid").val();
+                        API.queryDevice(organizationid,function(res){
+                            console.log(res)
+                        })
+                    })
+                    
             $peopleAdd.on("click", ".btn-blue", function () {
                     var secondFaceimages = $("#btnPeopleManager").attr("faceimage");
                     var secondFacedatas = $("#btnPeopleManager").attr("facedata");
@@ -50,11 +58,7 @@ define(["jquery", "artTemplate", "text!tpls/peopleAdd.html", "common/api","peopl
                     var phonenumber = $(".phonenumber").val();
                     var verifcode = $(".verifcode").val();
                     var organizationid = $(".organizationid").val();
-                    $peopleAdd.on("click",".organizationid",function(){
-                        API.queryDevice(organizationid,function(res){
-                            console.log(res)
-                        })
-                    })
+                    
                     var deviceids = "SB001";
                     API.addEmployee(verifcode,organizationid, deviceids,name, sex, birthday, phonenumber, employeenumber, job, faceimages, facedatas, function (res) {
                         //成功申请，跳转到成功页面

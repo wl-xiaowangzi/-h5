@@ -11,9 +11,25 @@ define(["jquery", "artTemplate", "text!tpls/peopleVisitantAdd.html", "common/api
         var firstFaceimages=faceimages;
         var firstFacedatas=facedatas;
 
-        $peopleVisitantAdd.on("click", "#start", function () {
-            camera();
-        })
+        $peopleVisitantAdd.on("click",".verification",function(){
+                var phonenumber = $(".phonenumber").val();
+                API.getVerifcode(phonenumber,function(res){
+                    // 收到短信
+                    var time = 60;
+                    var timename =setInterval(function(){
+                        if(time>1){
+                            time--
+                            $(".verification").addClass("forbidden").attr({"disabled":"disabled"}).html(time+"S后可重发");
+                        }else{
+                            clearInterval(timename);
+                            $(".verification").removeClass("forbidden").removeAttr("disabled").html("获取验证码");
+                        }
+                        
+                    },1000)
+                   
+                })
+                return false;
+            })
         $peopleVisitantAdd.on("click", ".btn-blue", function () {
                 var deviceids=$.cookie("deviceids");
                 var secondFaceimages = $("#btnPeopleManager").attr("faceimage");
@@ -35,12 +51,11 @@ define(["jquery", "artTemplate", "text!tpls/peopleVisitantAdd.html", "common/api
                 var endtime = $(".endtime").val();
                 var sex = $(".sex").val();
                 var verifcode = $(".verifcode").val();
+                var deviceids = "SB001";
                 console.log(birthday,phonenumber,starttime)
-                API.addVisitor(deviceids,name, sex, birthday, phonenumber,starttime,endtime, remark, faceimages, facedatas, function (res) {
-                    $peopleVisitantAdd.modal("hide");
-                    console.log(res)
-                    //成功的添加员工->刷新员工管理页面
-                    $("#btnVisitorManager").trigger("click");
+                API.addVisitor(verifcode,deviceids,name, sex, birthday, phonenumber,starttime,endtime, remark, faceimages, facedatas, function (res) {
+                    //成功申请，跳转到成功页面
+                    successfully()
                 })
                 return false; //阻止同步提交表单
             });

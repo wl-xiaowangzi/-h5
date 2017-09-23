@@ -410,22 +410,23 @@ p.wrong{
     background-color: #fff;
 }
 .verification{
-    height: 14vw;
-    width: 28.125vw;
+    height: 14vw!important;
+    width: 28.125vw!important;
     background-color: #357aed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-size: 3.75vw;
+    display: flex!important;
+    justify-content: center!important;
+    align-items: center!important;
+    color: #fff!important;
+    font-size: 3.75vw!important;
+    border-radius:0!important;
 }
 button.verification{
-    padding: 0;
-    margin: 0;
-    border: 0;
+    padding: 0!important;
+    margin: 0!important;
+    border: 0!important;
 }
 .forbidden{
-    background-color: #a3c6ff;
+    background-color: #a3c6ff!important;
 }
 /*表单提交 end*/
 

@@ -11,7 +11,7 @@ define(["jquery"],function($){
         uploadImage:function(imagefile,callback){
             $.ajax({
                 url:api+"/api/uploadFileBase64",
-                timeout:1000000,
+                timeout:100000,
                 type:"post",
                 data:{imagefile:imagefile},
                 success:function(res){
@@ -67,11 +67,11 @@ define(["jquery"],function($){
             })
         },
         // 访客添加
-        addVisitor:function(deviceids,name, sex, birthday, phonenumber,starttime,endtime, remark, faceimages, facedatas,callback){
+        addVisitor:function(verifcode,deviceids,name, sex, birthday, phonenumber,starttime,endtime, remark, faceimages, facedatas,callback){
             $.ajax({
                 url:api+"/api/visitor/add",
                 type:"post",
-                data:{deviceids:deviceids,name:name,sex:sex,birthday:birthday,phonenumber:phonenumber,starttime:starttime,endtime:endtime,remark:remark,faceimages:faceimages,facedatas:facedatas},
+                data:{verifcode:verifcode,deviceids:deviceids,name:name,sex:sex,birthday:birthday,phonenumber:phonenumber,starttime:starttime,endtime:endtime,remark:remark,faceimages:faceimages,facedatas:facedatas},
                 success:function(res){
                     if(res.code!=0){
                     console.log(res.message);
