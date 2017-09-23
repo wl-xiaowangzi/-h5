@@ -24,6 +24,9 @@ define(["jquery", "artTemplate", "common/api", "text!tpls/choiceForm.html","peop
         //把渲染好的元素放到页面中
         $(".module-container").append($choiceForm);
         $(".step2").addClass('black');
+        if(faceimages1==undefined){
+            $(".pic1-box").addClass("displayN");
+        }
         $(".pic1").attr("src",faceimages1);
         $(".pic2").attr("src",faceimages2);
     }

@@ -13,7 +13,7 @@ define(["jquery", "artTemplate", "text!tpls/camera.html", "common/api","people/c
         
         $('#file').localResizeIMG({
             width: 640, //默认尺寸640 
-            quality: 0.8, //体积压缩20%
+            quality: 0.2, //体积压缩80%
             before: function (that, blob) { //图片上传前信息
                 // $('.msk').show();
             },

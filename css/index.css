@@ -32,9 +32,9 @@ body{
     align-items: center;
 }
 
-.datetimepicker {
+/*.datetimepicker {
     top:200px!important;
-}
+}*/
 .opacity0{
     opacity: 0;
 }
@@ -45,7 +45,7 @@ body{
     color: #000;
     font-weight: 800;
 }
-.displayN{display: none;}
+.displayN{display: none!important;}
 .displayB{display: inline-block;}
 .black{color: black;}
 /*公共样式 end*/
@@ -263,12 +263,15 @@ p.wrong{
     padding-bottom: 5vw;
     padding-top: 1.7vw;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 .getPhone .img-box{
     width: 31.25vw;
     height: 31.25vw;
+}
+.getPhone .pic1-box{
+    margin-right: 7.5vw;
 }
 .getPhone .img-box img{
     display: block;
