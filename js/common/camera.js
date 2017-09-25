@@ -31,6 +31,7 @@ define(["jquery", "artTemplate", "text!tpls/camera.html", "common/api", "people/
                         var faceimage1 = res.data.faceimage;
                         var facedata1 = res.data.facedata;
                         $("#btnPeopleManager").attr("faceimage",res.data.faceimage);
+                        $("#btnPeopleManager").attr("facedata",res.data.facedata);
                         $("#file").on("click", function () {
                             continuePhoto(faceimage1, facedata1);
                         })

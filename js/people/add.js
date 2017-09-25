@@ -45,6 +45,7 @@ define(["jquery", "artTemplate", "text!tpls/peopleAdd.html", "common/api", "peop
             var secondFacedatas = $("#btnPeopleManager").attr("facedata");
             $("#btnPeopleManager").removeAttr("faceimage");
             $("#btnPeopleManager").removeAttr("facedata");
+            console.log(secondFacedatas)
             if (secondFaceimages == undefined) {
                 faceimages = firstFaceimages;
                 facedatas = "[" + firstFacedatas + "]";
@@ -61,7 +62,8 @@ define(["jquery", "artTemplate", "text!tpls/peopleAdd.html", "common/api", "peop
             var verifcode = $(".verifcode").val();
             var organizationid = $(".organizationid").val();
 
-            var deviceids = "SB001";
+            
+            console.log(facedatas)
             API.addEmployee(verifcode, organizationid, deviceids, name, sex, birthday, phonenumber, employeenumber, job, faceimages, facedatas, function (res) {
                 //成功申请，跳转到成功页面
                 successfully()
