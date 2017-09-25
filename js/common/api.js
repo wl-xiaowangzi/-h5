@@ -4,7 +4,7 @@
  *   Date:2017/9/6
  */
 define(["jquery"],function($){
-    // var api="http://39.108.171.172:8081/facerecognition";
+    // var api="http://39.108.171.172:80/facerecognition";
     var api="http://127.0.0.1:80/facerecognition";
     return {
         // 图片上传
@@ -67,11 +67,11 @@ define(["jquery"],function($){
             })
         },
         // 访客添加
-        addVisitor:function(verifcode,deviceids,name, sex, birthday, phonenumber,starttime,endtime, remark, faceimages, facedatas,callback){
+        addVisitor:function(verifcode,organizationid,deviceids,name, sex, birthday, phonenumber,starttime,endtime, remark, faceimages, facedatas,callback){
             $.ajax({
                 url:api+"/api/visitor/add",
                 type:"post",
-                data:{verifcode:verifcode,deviceids:deviceids,name:name,sex:sex,birthday:birthday,phonenumber:phonenumber,starttime:starttime,endtime:endtime,remark:remark,faceimages:faceimages,facedatas:facedatas},
+                data:{verifcode:verifcode,organizationid:organizationid,deviceids:deviceids,name:name,sex:sex,birthtime:birthday,phonenumber:phonenumber,starttime:starttime,endtime:endtime,remark:remark,faceimages:faceimages,facedatas:facedatas},
                 success:function(res){
                     if(res.code!=0){
                     console.log(res.message);

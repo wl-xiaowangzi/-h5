@@ -16,11 +16,11 @@ require.config({
         text: "lib/text",
         artTemplate: "lib/template-web",
         bootstrap: "../assets/bootstrap/js/bootstrap",
+        lrz: "../assets/lrz/lrz.bundle",
         //配置模板文件夹的路径
         tpls: "../tpls",
         datetimepicker: "../assets/datetimepicker/js/bootstrap-datetimepicker",
-        daterangepicker: "../assets/daterangepicker/js/daterangepicker",
-        moment: "../assets/daterangepicker/js/moment.min",
+        LCalender:"../assets/LCalendar-master/js/LCalendar.min",
         datetimepickerLang: "../assets/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN",
     },
     // 设置依赖

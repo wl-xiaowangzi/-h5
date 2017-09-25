@@ -3,7 +3,7 @@
  * Author:land
  *   Date:2017/9/5
  */
-define(["jquery", "artTemplate", "text!tpls/peopleVisitantAdd.html", "common/api", "common/camera", "datetimepicker", "datetimepickerLang"], function ($, art, peopleVisitantAddTpl, API, camera) {
+define(["jquery", "artTemplate", "text!tpls/peopleVisitantAdd.html", "common/api", "people/successfully", "datetimepicker", "datetimepickerLang"], function ($, art, peopleVisitantAddTpl, API, successfully) {
     return function (faceimages,facedatas) {
         $(".module-container").empty();
 
@@ -31,7 +31,6 @@ define(["jquery", "artTemplate", "text!tpls/peopleVisitantAdd.html", "common/api
                 return false;
             })
         $peopleVisitantAdd.on("click", ".btn-blue", function () {
-                var deviceids=$.cookie("deviceids");
                 var secondFaceimages = $("#btnPeopleManager").attr("faceimage");
                 var secondFacedatas = $("#btnPeopleManager").attr("facedata");
                 $("#btnPeopleManager").removeAttr("faceimage");
@@ -51,9 +50,10 @@ define(["jquery", "artTemplate", "text!tpls/peopleVisitantAdd.html", "common/api
                 var endtime = $(".endtime").val();
                 var sex = $(".sex").val();
                 var verifcode = $(".verifcode").val();
+                var organizationid = $(".organizationid").val();
                 var deviceids = "SB001";
-                console.log(birthday,phonenumber,starttime)
-                API.addVisitor(verifcode,deviceids,name, sex, birthday, phonenumber,starttime,endtime, remark, faceimages, facedatas, function (res) {
+                console.log(verifcode,organizationid,deviceids,name, sex, birthday, phonenumber,starttime,endtime, remark, faceimages, facedatas)
+                API.addVisitor(verifcode,organizationid,deviceids,name, sex, birthday, phonenumber,starttime,endtime, remark, faceimages, facedatas, function (res) {
                     //成功申请，跳转到成功页面
                     successfully()
                 })
@@ -63,22 +63,20 @@ define(["jquery", "artTemplate", "text!tpls/peopleVisitantAdd.html", "common/api
         $(".module-container").append($peopleVisitantAdd);
         $(".step3").addClass('black');
         //渲染入职日期-->日期控件
-        $peopleVisitantAdd.find(".date-join").datetimepicker({
-            weekStart: 1, //一周从哪一天开始。0（星期日）到6（星期六）
-            format: 'yyyy-mm-dd HH:mm:ss',
-            autoclose: true,
-            todayBtn: true,
-            todayHighlight: true,
-            language: "zh-CN"
+        var calendar = new LCalendar();
+        calendar.init({
+            'trigger': '#birthday,#starttime,#endtime', //标签id
+            'type': 'date', //date 调出日期选择 datetime 调出日期时间选择 time 调出时间选择 ym 调出年月选择
         });
-        $peopleVisitantAdd.find(".birthday-join").datetimepicker({
-            format: 'yyyy-mm-dd',
-            weekStart: 1,
-            autoclose: true,
-            startView: 4,
-            minView: 2,
-            forceParse: false,
-            language: 'zh-CN'
+        var calendar1 = new LCalendar();
+        calendar1.init({
+            'trigger': '#starttime', //标签id
+            'type': 'date', //date 调出日期选择 datetime 调出日期时间选择 time 调出时间选择 ym 调出年月选择
+        });
+        var calendar2 = new LCalendar();
+        calendar2.init({
+            'trigger': '#endtime', //标签id
+            'type': 'date', //date 调出日期选择 datetime 调出日期时间选择 time 调出时间选择 ym 调出年月选择
         });
     };
 });

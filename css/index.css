@@ -32,9 +32,13 @@ body{
     align-items: center;
 }
 
-/*.datetimepicker {
-    top:200px!important;
+/*.datetimepicker{
+    width: 70vw!important;
+}
+.datetimepicker table{
+    width: 70vw!important;
 }*/
+
 .opacity0{
     opacity: 0;
 }
